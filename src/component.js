@@ -21,6 +21,7 @@ var QuillComponent = React.createClass({
 		style: T.object,
 		readOnly: T.bool,
 		value: T.string,
+		contents: T.object,
 		defaultValue: T.string,
 		placeholder: T.string,
 		bounds: T.oneOfType([T.string, T.element]),
@@ -175,6 +176,10 @@ var QuillComponent = React.createClass({
 			if (nextProps.readOnly !== this.props.readOnly) {
 				this.setEditorReadOnly(editor, nextProps.readOnly);
 			}
+		}
+
+		if ('contents' in nextProps) {
+			this.setEditorDeltaContents(editor, nextProps.contents);
 		}
 	},
 

@@ -77,6 +77,10 @@ var QuillMixin = {
 		editor.setSelection(range);
 	},
 
+	setEditorDeltaContents: function(editor, delta) {
+		editor.setContents(delta);
+	},
+
 	/*
 	Returns an weaker, unprivileged proxy object that only
 	exposes read-only accessors found on the editor instance,
